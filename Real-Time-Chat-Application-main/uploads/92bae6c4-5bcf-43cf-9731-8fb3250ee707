@@ -1,0 +1,86 @@
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Pet implements Serializable{
+    private String PetId;
+    private String Name;
+    private String Breed;
+    private int Age;
+    private String Owner_name;
+    private String Contact_info;
+    private LocalDate date;
+    private List<Appointment> list;
+
+    //contructors
+    public Pet(String P,String N,String B,int A,String O,String C,LocalDate D){
+        PetId=P;
+        Name=N;
+        Breed=B;
+        Age=A;
+        Owner_name=O;
+        Contact_info=C;
+        date=D;
+        list=new ArrayList<>();
+    }
+
+    //getters
+    public String get_PetId(){
+        return PetId;
+    }
+    public String get_Name(){
+        return Name;
+    }
+    public String get_Breed(){
+        return Breed;
+    }
+    public int get_Age(){
+        return Age;
+    }
+    public String get_Owner_name(){
+        return Owner_name;
+    }
+    public String get_Contact_info(){
+        return Contact_info;
+    }
+    public LocalDate get_date(){
+        return date;
+    }
+    public List<Appointment> get_list(){
+        return list;
+    }
+    //setters
+    public void set_PetId(String p){
+        PetId=p;
+    }
+    public void set_Name(String n){
+        Name=n;
+    }
+    public void set_Breed(String b){
+        Breed=b;
+    }
+    public void set_Age(int a){
+        Age=a;
+    }
+    public void set_Owner_name(String o){
+        Owner_name=o;
+    }
+    public void set_Contact_info(String c){
+        Contact_info=c;
+    }
+    public void set_date(LocalDate d){
+        date=d;
+    }
+    public void set_appointment(Appointment l){
+        list.add(l);
+    }
+
+    //toString 
+    public String toString(){
+        return  "Pet ID: "+PetId+"\nName: "+Name+
+                "\nBreed: "+Breed+"\nAge: "+Age+
+                "\nOwner: "+Owner_name+"\nContact: "+Contact_info+
+                "\nRegistration Date: "+date+"\nAppointments: "+list.size();
+    }
+}
